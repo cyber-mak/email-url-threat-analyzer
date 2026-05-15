@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThreatScan — Email & URL Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="scanline"></div>
+  <div class="noise"></div>
+
+  <header>
+    <div class="logo">
+      <span class="logo-bracket">[</span>
+      THREAT<span class="accent">SCAN</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <p class="tagline">Email &amp; URL Threat Intelligence Analyzer</p>
+  </header>
+
+  <main>
+
+    <!-- Tab Switcher -->
+    <div class="tabs">
+      <button class="tab active" data-tab="url">🔗 URL Analyzer</button>
+      <button class="tab" data-tab="email">📧 Email Analyzer</button>
+    </div>
+
+    <!-- URL Panel -->
+    <section class="panel active" id="url-panel">
+      <div class="input-group">
+        <label>PASTE SUSPICIOUS URL</label>
+        <input type="text" id="url-input" placeholder="https://suspicious-site.com/login" />
+        <button class="scan-btn" onclick="analyzeURL()">
+          <span class="btn-text">RUN SCAN</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+      <div class="result-box" id="url-result" style="display:none;"></div>
+    </section>
+
+    <!-- Email Panel -->
+    <section class="panel" id="email-panel">
+      <div class="input-group">
+        <label>PASTE RAW EMAIL TEXT</label>
+        <textarea id="email-input" placeholder="Paste full email content here including headers..."></textarea>
+        <button class="scan-btn" onclick="analyzeEmail()">
+          <span class="btn-text">RUN SCAN</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+      <div class="result-box" id="email-result" style="display:none;"></div>
+    </section>
+
+    <!-- Scan History -->
+    <section class="history-section">
+      <div class="history-header">
+        <span>⟳ SCAN HISTORY</span>
+        <button onclick="clearHistory()">CLEAR</button>
+      </div>
+      <div id="history-list">
+        <p class="empty-history">No scans yet.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Powered by <span class="accent">VirusTotal API</span> · <span class="accent">URLScan.io</span> · Built for cybersecurity portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
