@@ -8,7 +8,7 @@ A cybersecurity web tool that analyzes URLs and emails for phishing, malware, an
 
 ## 🚀 Live Demo
 
-> Deploy to [Render.com](https://render.com) or [Railway.app](https://railway.app) for free.
+🌐 Live Demo: https://github.com/cyber-mak/email-url-threat-analyzer/frontend/
 
 ---
 
